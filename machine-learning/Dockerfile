@@ -10,7 +10,13 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     libfftw3-dev \
     libgdal-dev \
-    libudunits2-dev
+    libudunits2-dev \
+    libx11-dev \
+    libglpk-dev \
+    libtiff5-dev \
+    libcairo2-dev \
+    libxt-dev \
+    libmagick++-dev
 
 # Install R packages
 RUN R -e "install.packages(c('plumber', 'lubridate', 'caret', 'randomForest', 'xgboost', 'text2vec', 'glmnet', 'tseries', 'prophet', 'imager', 'kernlab', 'jsonlite'), repos='http://cran.rstudio.com/', dependencies=TRUE)"
