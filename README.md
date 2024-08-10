@@ -134,7 +134,7 @@ The API will be available at `http://localhost:8080`.
 
 ## Troubleshooting
 
-(1) If you encounter memory problems, try increasing the amount of memory available for Docker in the settings.
+1. If you encounter memory problems, try increasing the amount of memory available for Docker in the settings.
 2. If you have problems installing R packages, check Docker logs to identify missing system dependencies.
 3. If the API is running slowly, consider optimizing models or using smaller datasets for training.
 
