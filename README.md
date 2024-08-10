@@ -1,55 +1,55 @@
-# Zaawansowane API Analizy Danych i Uczenia Maszynowego
+# Advanced Data Analytics and Machine Learning APIs.
 
-To repozytorium zawiera zaawansowane API stworzone przy użyciu pakietu Plumber w R, skonteneryzowane w Dockerze. API oferuje szereg zaawansowanych funkcji analizy danych i uczenia maszynowego.
+This repository contains advanced APIs created using the Plumber package in R, containerized in Docker. The API offers a number of advanced data analysis and machine learning features.
 
-## Funkcjonalności
+## Functionalities
 
-1. Przewidywanie cen domów z wykorzystaniem XGBoost
-2. Zaawansowana analiza sentymentu tekstu z użyciem word embeddings
-3. Prognozowanie szeregów czasowych z wykorzystaniem modelu Prophet
-4. Klasyfikacja obrazów (symulowana, przygotowana do integracji z modelami CNN)
-5. Segmentacja klientów z wykorzystaniem algorytmu k-means
-6. Wykrywanie anomalii w szeregach czasowych
+1. House price prediction using XGBoost
+2. Advanced text sentiment analysis using word embeddings
+3. Time series forecasting using Prophet model
+4. Image classification (simulated, prepared for integration with CNN models)
+5. Customer segmentation using the k-means algorithm
+6. Detection of anomalies in time series
 
-## Wymagania systemowe
+## System requirements
 
 - Docker
-- Minimum 4GB RAM
-- 10GB wolnego miejsca na dysku
+- 4GB RAM minimum
+- 10GB of free disk space
 
-## Instalacja i uruchomienie
+## Installation and startup
 
-1. Sklonuj to repozytorium:
+1 Clone this repository:
    ```
    git clone [URL_REPOZYTORIUM]
-   cd [NAZWA_KATALOGU]
+   cd [CATALOG NAME].
    ```
 
-2. Zbuduj obraz Docker:
+2 Build the Docker image:
    ```
    docker build -t advanced-plumber-api .
    ```
 
-3. Uruchom kontener:
+3. Launch the container:
    ```
    docker run -p 8080:8080 advanced-plumber-api
    ```
 
-API będzie dostępne pod adresem `http://localhost:8080`.
+The API will be available at `http://localhost:8080`.
 
-## Endpointy API i przykłady użycia
+## API endpoints and usage examples
 
-### 1. Przewidywanie cen domów (XGBoost)
+### 1. House price prediction (XGBoost).
 
-- Metoda: POST
-- Endpoint: `/predict_house_price_xgboost`
-- Przykład użycia:
-  ```bash
+- Method: POST
+- Endpoint: `/predict_house_price_xgboost`.
+- Usage example:
+  `bash
   curl -X POST "http://localhost:8080/predict_house_price_xgboost" \
-       -H "Content-Type: application/json" \
+       -H "Content-Type: application/json". \
        -d '{
-         "area": 150,
-         "bedrooms": 3,
+         'area': 150,
+         'bedrooms': 3,
          "bathrooms": 2,
          "age": 10,
          "location_score": 7.5,
@@ -57,25 +57,25 @@ API będzie dostępne pod adresem `http://localhost:8080`.
        }'
   ```
 
-### 2. Zaawansowana analiza sentymentu
+### 2. Advanced sentiment analysis
 
-- Metoda: POST
-- Endpoint: `/advanced_sentiment_analysis`
-- Przykład użycia:
-  ```bash
+- Method: POST
+- Endpoint: `/advanced_sentiment_analysis`.
+- Usage example:
+  `bash
   curl -X POST "http://localhost:8080/advanced_sentiment_analysis" \
-       -H "Content-Type: text/plain" \
-       -d "To jest niezwykle fascynujący i inspirujący artykuł o najnowszych osiągnięciach w dziedzinie sztucznej inteligencji."
+       -H "Content-Type: text/plain". \
+       -d "This is an extremely fascinating and inspiring article about the latest developments in artificial intelligence."
   ```
 
-### 3. Zaawansowane prognozowanie szeregu czasowego
+### 3. Advanced time series forecasting
 
-- Metoda: POST
-- Endpoint: `/advanced_time_series_forecast`
-- Przykład użycia:
-  ```bash
+- Method: POST
+- Endpoint: `/advanced_time_series_forecast`.
+- Usage example:
+  `bash
   curl -X POST "http://localhost:8080/advanced_time_series_forecast" \
-       -H "Content-Type: application/json" \
+       -H "Content-Type: application/json". \
        -d '{
          "dates": ["2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05", "2023-01-06", "2023-01-07"],
          "values": [100, 110, 120, 115, 125, 130, 140],
@@ -83,73 +83,75 @@ API będzie dostępne pod adresem `http://localhost:8080`.
        }'
   ```
 
-### 4. Klasyfikacja obrazów
+### 4. Image classification
 
-- Metoda: POST
-- Endpoint: `/classify_image`
-- Przykład użycia:
-  ```bash
+- Method: POST
+- Endpoint: `/classify_image`.
+- Usage example:
+  `bash
   curl -X POST "http://localhost:8080/classify_image" \
-       -H "Content-Type: multipart/form-data" \
+       -H "Content-Type: multipart/form-data". \
        -F "image=@/path/to/your/image.jpg"
   ```
 
-### 5. Grupowanie klientów
+### 5. Client grouping
 
-- Metoda: POST
-- Endpoint: `/customer_segmentation`
-- Przykład użycia:
-  ```bash
+- Method: POST
+- Endpoint: `/customer_segmentation`.
+- Usage example:
+  `bash
   curl -X POST "http://localhost:8080/customer_segmentation" \
-       -H "Content-Type: application/json" \
+       -H "Content-Type: application/json". \
        -d '[
-         {"age": 25, "income": 50000, "spending_score": 75},
-         {"age": 40, "income": 70000, "spending_score": 60},
-         {"age": 35, "income": 65000, "spending_score": 80},
-         {"age": 50, "income": 90000, "spending_score": 50},
-         {"age": 30, "income": 55000, "spending_score": 70}
+         { "age": 25, "income": 50000, "spending_score": 75},
+         { "age": 40, "income": 70000, "spending_score": 60},
+         { "age": 35, "income": 65000, "spending_score": 80},
+         { "age": 50, "income": 90000, "spending_score": 50},
+         { "age": 30, "income": 55000, "spending_score": 70}
        ]'
   ```
 
-### 6. Wykrywanie anomalii w szeregu czasowym
+### 6. detecting anomalies in the time series
 
-- Metoda: POST
-- Endpoint: `/anomaly_detection`
-- Przykład użycia:
-  ```bash
+- Method: POST
+- Endpoint: `/anomaly_detection`.
+- Usage example:
+  `bash
   curl -X POST "http://localhost:8080/anomaly_detection" \
-       -H "Content-Type: application/json" \
+       -H "Content-Type: application/json". \
        -d '{
          "dates": ["2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05", "2023-01-06", "2023-01-07"],
          "values": [100, 110, 120, 300, 125, 130, 140]
        }'
   ```
 
-## Uwagi
+## Notes
 
-- Upewnij się, że port 8080 jest wolny na Twoim komputerze przed uruchomieniem kontenera.
-- Niektóre modele (np. klasyfikacja obrazów) używają symulowanych danych dla celów demonstracyjnych. W rzeczywistym scenariuszu należy je zastąpić prawdziwymi, wytrenowanymi modelami.
-- API wykorzystuje znaczną ilość pamięci RAM ze względu na zaawansowane modele uczenia maszynowego. Upewnij się, że Twój system ma wystarczające zasoby.
-- W przypadku problemów z instalacją pakietów R, może być konieczne dostosowanie Dockerfile lub instalacja dodatkowych zależności systemowych.
+- Make sure port 8080 is free on your computer before running the container.
+- Some models (such as image classification) use simulated data for demonstration purposes. In a real-world scenario, replace them with real, trained models.
+- The API uses a significant amount of RAM due to advanced machine learning models. Make sure your system has sufficient resources.
+- If you have problems installing R packages, you may need to adjust the Dockerfile or install additional system dependencies.
 
-## Rozwiązywanie problemów
+## Troubleshooting
 
-1. Jeśli napotkasz problemy z pamięcią, spróbuj zwiększyć ilość pamięci dostępnej dla Dockera w ustawieniach.
-2. W przypadku problemów z instalacją pakietów R, sprawdź logi Dockera, aby zidentyfikować brakujące zależności systemowe.
-3. Jeśli API działa wolno, rozważ optymalizację modeli lub użycie mniejszych zbiorów danych do treningu.
+(1) If you encounter memory problems, try increasing the amount of memory available for Docker in the settings.
+2. If you have problems installing R packages, check Docker logs to identify missing system dependencies.
+3. If the API is running slowly, consider optimizing models or using smaller datasets for training.
 
-## Rozwój projektu
+## Project development
 
-Aby rozwijać projekt:
+To develop the project:
 
-1. Zmodyfikuj `plumber.R`, aby dodać nowe endpointy lub zmienić istniejące.
-2. Zaktualizuj Dockerfile, jeśli potrzebujesz dodatkowych pakietów R lub zależności systemowych.
-3. Po wprowadzeniu zmian, przebuduj obraz Docker i uruchom kontener ponownie.
+1. Modify `plumber.R` to add new endpoints or change existing ones.
+2. Update the Dockerfile if you need additional R packages or system dependencies.
+3. After making changes, rebuild the Docker image and restart the container.
 
-## Licencja
+## License
 
-[Dodaj informacje o licencji]
+[Add license information]
 
-## Kontakt
+## Contact.
 
-[Dodaj informacje kontaktowe]
+[Add contact information]
+
+Translated with DeepL.com (free version)
