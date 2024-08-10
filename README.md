@@ -44,7 +44,7 @@ The API will be available at `http://localhost:8080`.
 - Method: POST
 - Endpoint: `/predict_house_price_xgboost`.
 - Usage example:
-  `bash
+   ```bash
   curl -X POST "http://localhost:8080/predict_house_price_xgboost" \
        -H "Content-Type: application/json". \
        -d '{
@@ -62,7 +62,7 @@ The API will be available at `http://localhost:8080`.
 - Method: POST
 - Endpoint: `/advanced_sentiment_analysis`.
 - Usage example:
-  `bash
+   ```bash
   curl -X POST "http://localhost:8080/advanced_sentiment_analysis" \
        -H "Content-Type: text/plain". \
        -d "This is an extremely fascinating and inspiring article about the latest developments in artificial intelligence."
@@ -73,7 +73,7 @@ The API will be available at `http://localhost:8080`.
 - Method: POST
 - Endpoint: `/advanced_time_series_forecast`.
 - Usage example:
-  `bash
+   ```bash
   curl -X POST "http://localhost:8080/advanced_time_series_forecast" \
        -H "Content-Type: application/json". \
        -d '{
@@ -88,7 +88,7 @@ The API will be available at `http://localhost:8080`.
 - Method: POST
 - Endpoint: `/classify_image`.
 - Usage example:
-  `bash
+   ```bash
   curl -X POST "http://localhost:8080/classify_image" \
        -H "Content-Type: multipart/form-data". \
        -F "image=@/path/to/your/image.jpg"
@@ -99,7 +99,7 @@ The API will be available at `http://localhost:8080`.
 - Method: POST
 - Endpoint: `/customer_segmentation`.
 - Usage example:
-  `bash
+   ```bash
   curl -X POST "http://localhost:8080/customer_segmentation" \
        -H "Content-Type: application/json". \
        -d '[
@@ -116,7 +116,7 @@ The API will be available at `http://localhost:8080`.
 - Method: POST
 - Endpoint: `/anomaly_detection`.
 - Usage example:
-  `bash
+   ```bash
   curl -X POST "http://localhost:8080/anomaly_detection" \
        -H "Content-Type: application/json". \
        -d '{
