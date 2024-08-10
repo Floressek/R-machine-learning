@@ -27,12 +27,12 @@ This repository contains advanced APIs created using the Plumber package in R, c
 
 2 Build the Docker image:
    ```
-   docker build -t advanced-plumber-api .
+   docker build -t machine-learning .
    ```
 
 3. Launch the container:
    ```
-   docker run -p 8080:8080 advanced-plumber-api
+   docker run -p 8080:8080 machine-learning
    ```
 
 The API will be available at `http://localhost:8080`.
